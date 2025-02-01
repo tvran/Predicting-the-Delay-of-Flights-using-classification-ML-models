@@ -1,5 +1,81 @@
-# Predicting the Delay of Flights using classification ML models
+# ✈️ Flight Delay Classification Using Machine Learning
 
-Лучшей моделью для предсказания Flight delay была Random Forest. В перспективе, можно взять более широкий датасет с данными о погоде и таким образом усилить модель. Также, можно попробовать использовать модели глубинного обучения и LSTM для учитывания динамических данных (например, вероятность задержки может увеличиваться если в аэропорту несколько рейсов перед исследуемым рейсом подверглись задержке). Более того, можно увеличить кол-во классов вместо "будет ли задержка дольше 15 мин" на классы >5, >15, >30, >60 мин. Для этого нужны большие вычислительные ресурсы и бесперебойный доступ к GPU, который был у меня ограничен бесплатной версией Google Colab. 
+This project explores the classification of **flight delays** using **classic machine learning models**, aiming to predict whether a flight will be delayed based on various factors such as departure time, airline, and airport data.
 
-В связи с нехваткой времени я также не успел сделать deployment моей готовой модели, которая должна была брать данные о рейсе, месте вылета и прилета, предварительных данных о времени вылета и прилета. Остальные входные данные для модели, включающие признаки DEP_DELAYS_BY_DEP_TIME_BLK,ARR_DELAYS_BY_ARR_TIME_BLK, DEP_DELAYS_PER_ORIGIN, ARR_DELAYS_PER_DEST должны были автоматически преобразовываться относительно файла dictionaries.py
+## 📌 Project Overview
+- Developed as part of final project assessment for **ELCE 455: Machine Learning with Python (Fall 2024)** course with instructor Professor Dr. Amin Zollanvari
+- Dataset: **US domestic flights (January 2019)**
+- Best performing model: **Random Forest** (92% accuracy, 0.77 F1-score for delayed flights)
+- Implemented models: Logistic Regression, Decision Trees, Random Forest, KNN, AdaBoost
+
+## 📊 Methodology
+1. **Data Preprocessing:** Handling missing values, encoding categorical variables, and feature scaling.
+2. **Feature Engineering:** Adding temporal features and spatial-temporal interactions for improved predictive power.
+3. **Model Training & Selection:** Evaluated multiple ML models using **cross-validation** and **grid search**.
+4. **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score, and ROC-AUC.
+
+## 🚀 Results & Insights
+- **Random Forest** outperformed other models, effectively handling non-linear feature interactions.
+- **AdaBoost** performed well but had slightly lower recall for delayed flights.
+- Feature engineering, including **departure delay indicators** and **time-based binning**, significantly improved model performance.
+- Future improvements: Incorporating **weather data** and **deep learning models** like LSTMs.
+
+## 🔧 Installation & Usage
+### 📦 Requirements
+- Python 3.9+
+- Required libraries:
+  ```bash
+  pip install pandas numpy scikit-learn matplotlib seaborn
+  ```
+
+# ✈️ Flight Delay Classification Using Machine Learning
+
+This project explores the classification of **flight delays** using **classic machine learning models**, aiming to predict whether a flight will be delayed based on various factors such as departure time, airline, and airport data.
+
+## 📌 Project Overview
+- Developed for **ELCE 455: Machine Learning with Python (Fall 2024)**
+- Dataset: **US domestic flights (January 2019)**
+- Best performing model: **Random Forest** (92% accuracy, 0.77 F1-score for delayed flights)
+- Implemented models: Logistic Regression, Decision Trees, Random Forest, KNN, AdaBoost
+
+## 📊 Methodology
+1. **Data Preprocessing:** Handling missing values, encoding categorical variables, and feature scaling.
+2. **Feature Engineering:** Adding temporal features and spatial-temporal interactions for improved predictive power.
+3. **Model Training & Selection:** Evaluated multiple ML models using **cross-validation** and **grid search**.
+4. **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score, and ROC-AUC.
+
+## 🚀 Results & Insights
+- **Random Forest** outperformed other models, effectively handling non-linear feature interactions.
+- **AdaBoost** performed well but had slightly lower recall for delayed flights.
+- Feature engineering, including **departure delay indicators** and **time-based binning**, significantly improved model performance.
+- Future improvements: Incorporating **weather data** and **deep learning models** like LSTMs.
+
+## 🔧 Installation & Usage
+### 📦 Requirements
+- Python 3.9+
+- Required libraries:
+  ```bash
+  pip install pandas numpy scikit-learn matplotlib seaborn
+  ```
+
+### ▶️ Running the Model
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/tvran/Forte-stt.git
+   cd Forte-stt
+   ```
+2. Run the preprocessing and model training:
+   ```bash
+   python main.py
+   ```
+
+## 📂 Project Structure
+```
+📁 Forte-stt/
+│── Predicting_the_Delay_of_Flights_Turan.ipynb                # Project notebook
+│── README.md                                                  # Project documentation
+│── dictionaries.py                                            # Loaded dataset
+```
+
+📌 **Institution:** Nazarbayev University, School of Engineering and Digital Sciences, Department of Electrical and Computer Engineering  
+📅 **Date:** November 24, 2024  
